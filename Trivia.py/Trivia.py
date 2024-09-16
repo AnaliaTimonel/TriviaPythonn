@@ -1,4 +1,4 @@
-
+#condicional para verificar si el usuario es mayor de edad
 
 def usuario():
     print("***BIENVENIDO A TRIVIA PYTHON***")
@@ -9,7 +9,7 @@ def usuario():
     if edad >=18:
         print(" ")
         
-        
+        #bienvenida e instrucciones de juego
         def bienvenida(nombre):
                     print(f"""Hola {nombre}, te damos la bienvenida a este juego de trivia que
                     pondra tus conocimientos sobre Python a prueba.
@@ -19,7 +19,7 @@ def usuario():
           
                           ¡¡¡¡ MUCHA SUERTE Y A JUGAAAAR =) !!!!""")
         bienvenida(nombre)
-
+#lista de preguntas y respuesta y su vinculacion entre ambas
         def preguntas_juego():
               import random
               preguntas= ["¿Que es un algoritmo? RESPUESTAS:A- es un conjunto ordenado de instrucciones para solucionar un problema.B: es una funcion que permite iterar valores",
@@ -32,18 +32,21 @@ def usuario():
               respuestas= ["a","b","b","a","b","a","a"]
               preguntas_respuestas=(preguntas[0],respuestas[0]),(preguntas[1],respuestas[1]),(preguntas[2],respuestas[2]),(preguntas[3],respuestas[3]),(preguntas[4],respuestas[4]),(preguntas[5],respuestas[5]),(preguntas[6],respuestas[6])
               random.shuffle(preguntas)
-              
+              #contador de vidas y puntos
               puntos=0
               vidas=3
+            #bucle para repetir las preguntas mientras vida no sea 3
               while vidas!= 0:
-                   
+                   #generador de preguntas 
                for p,r in preguntas_respuestas:
                   print("                                                                                    ")
                   print("* Pregunta:", p)
                   print("                                                                                    ")
+                   #ingreso de respuesta por parte del usuario
                   respuesta_usuario=input("Ingrese su repuesta: ")
                   respuesta_usuario.lower()
-                  if respuesta_usuario== r:
+#verificar si la respuesta del usuario es correcta o incorrecta
+                   if respuesta_usuario== r:
                      puntos+=1
                      
                      print("Su repuesta en correcta!!!")
@@ -56,7 +59,7 @@ def usuario():
                    
                    print("                                    ")
                    print(f"Usted tiene {vidas} vidas =( ")
-                   
+                   #mensaje final cuando pierde el juego
                   if vidas==0:
                        print(f"Su puntaje final es : {puntos}")
                        print("Usted a perdido, hasta la proxima")
@@ -70,7 +73,7 @@ def usuario():
               
         preguntas_juego()
   
-        
+        #condicional en caso de que sea menos de edad
     else:
          print("Usted no cumple con el requisito de edad minima, hasta pronto!")
         
